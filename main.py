@@ -1,8 +1,10 @@
 from flask import Flask
-from second import second1
+from admin.admin import admin1
+from clients.profile import profile1
 
 app=Flask(__name__)
-app.register_blueprint(second1, url_prefix='')
+app.register_blueprint(admin1,  url_prefix='/admin')
+app.register_blueprint(profile1, url_prefix='/profile')
 
 @app.route('/')
 def main():
